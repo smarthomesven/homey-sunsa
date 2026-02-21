@@ -150,7 +150,7 @@ module.exports = class MyDriver extends Homey.Driver {
         }
       } else {
         this.error('Something went wrong while fetching devices');
-        const devices = this.homey.getDevices();
+        const devices = this.getDevices();
         for (const id in devices) {
           const homeyDevice = devices[id];
           await homeyDevice.setUnavailable(Homey.__('errors.unexpected'));
@@ -158,7 +158,7 @@ module.exports = class MyDriver extends Homey.Driver {
       }
     } catch (error) {
       this.error('Error fetching devices:', error);
-      const devices = this.homey.getDevices();
+      const devices = this.getDevices();
       if (error.response?.status === 401) {
         this.error('Invalid API key');
         for (const id in devices) {
