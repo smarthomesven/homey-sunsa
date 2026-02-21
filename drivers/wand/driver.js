@@ -139,7 +139,7 @@ module.exports = class MyDriver extends Homey.Driver {
       if (response.status === 200) {
         const devices = response.data.devices;
         for (const device of devices) {
-          const homeyDevice = this.homey.getDevice({ id: device.idDevice });
+          const homeyDevice = this.getDevice({ id: device.idDevice });
           if (homeyDevice) {
             // Update the device capabilities based on the API response
             // For example, if the API returns a "Position" property:
