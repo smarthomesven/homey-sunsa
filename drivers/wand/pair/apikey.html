@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .error {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend">Sunsa</legend>
+      <br>
+      <p data-i18n="pair.info"></p>
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="apikey" data-i18n="pair.key">API Key</label>
+        <input class="homey-form-input" id="apikey" type="text" value="" />
+        <p class="error" id="nokey" style="display: none;" data-i18n="pair.nokey"></p>
+      </div>
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="user" data-i18n="pair.user">User ID</label>
+        <input class="homey-form-input" id="user" type="text" value="" />
+        <p class="error" id="nouser" style="display: none;" data-i18n="pair.nouser"></p>
+      </div>
+    </fieldset>
+
+    <p class="error" id="failed" style="display: none;">Something went wrong</p>
+    <button id="save" class="homey-button-primary-full" data-i18n="settings.save">Save</button>
+    <script type="text/javascript">
+      const keyElement = document.getElementById('apikey');
+      const userElement = document.getElementById('user');
+      const errorElement = document.getElementById('failed');
+      const saveElement = document.getElementById('save');
+      const noKeyElement = document.getElementById('nokey');
+      const noUserElement = document.getElementById('nouser');
+      saveElement.addEventListener("click", function (e) {
+        setSaving();
+        errorElement.style.display = 'none';
+        noKeyElement.style.display = 'none';
+        noUserElement.style.display = 'none';
+        const key = keyElement.value;
+        const user = userElement.value;
+        if (!key) {
+          noKeyElement.style.display = 'block';
+          setSave();
+          return;
+        }
+        if (!user) {
+          noUserElement.style.display = 'block';
+          setSave();
+          return;
+        }
+        Homey.emit("apikey", { apikey: key, user: user }).then(function (result) {
+          if (result.success === false) {
+            errorElement.style.display = 'block';
+            errorElement.innerText = result.error || Homey.__('pair.failed');
+            setSave();
+          }
+        });
+      });
+      function setSave() {
+        saveElement.className = 'homey-button-primary-full';
+        saveElement.textContent = Homey.__('pair.save');
+      }
+
+      function setSaving() {
+        saveElement.className = 'homey-button-primary-full is-loading';
+        saveElement.textContent = Homey.__('pair.saving');
+      }
+    </script>
+  </body>
+</html>

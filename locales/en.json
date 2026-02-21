@@ -1,0 +1,16 @@
+{
+    "pair": {
+        "info": "To get your API key, open the Sunsa mobile app, go to the Account tab and choose \"API Settings\". Click \"Generate New API Key\" and enter the API Key and User ID in the form below.",
+        "key": "API Key",
+        "user": "User ID",
+        "nokey": "Please enter an API Key",
+        "nouser": "Please enter a User ID",
+        "failed": "Something went wrong",
+        "save": "Save",
+        "saving": "Saving"
+    },
+    "errors": {
+        "unexpected": "An error occured",
+        "key": "Invalid API Key"
+    }
+}

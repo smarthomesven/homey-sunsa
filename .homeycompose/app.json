@@ -1,0 +1,33 @@
+{
+  "id": "com.sunsahomes",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Sunsa"
+  },
+  "description": {
+    "en": "Smart Blinds, Simplified"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "source": "https://github.com/smarthomesven/homey-sunsa",
+  "bugs": {
+    "url": "https://github.com/smarthomesven/homey-sunsa/issues"
+  },
+  "brandColor": "#7A7A77",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Sven Serlier",
+    "email": "sven@dypodex.com"
+  }
+}
