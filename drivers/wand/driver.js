@@ -153,7 +153,7 @@ module.exports = class MyDriver extends Homey.Driver {
         const devices = this.getDevices();
         for (const id in devices) {
           const homeyDevice = devices[id];
-          await homeyDevice.setUnavailable(Homey.__('errors.unexpected'));
+          await homeyDevice.setUnavailable(this.homey.__('errors.unexpected'));
         }
       }
     } catch (error) {
