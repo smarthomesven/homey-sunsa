@@ -1,0 +1,13 @@
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M428.307 176.348H398C395.791 176.348 394 178.139 394 180.348V916.348C394 918.557 395.791 920.348 398 920.348H561C563.209 920.348 565 918.557 565 916.348V180.348C565 178.139 563.209 176.348 561 176.348H533.373" fill="none" stroke="black" stroke-width="40"/>
+<path d="M506.051 130.147L511.993 64.8315C512.858 55.318 508.661 46.0494 500.94 40.4245C484.774 28.6476 461.855 37.7969 458.244 57.4688L451.836 92.3748" fill="none" stroke="black" stroke-width="20" stroke-linejoin="round"/>
+<path d="M512 120.348L469.788 142.995H499.012V175.348H420" fill="none" stroke="black" stroke-width="20" stroke-linejoin="round"/>
+<path d="M492 125.348V174.348H543" fill="none" stroke="black" stroke-width="20"/>
+<path d="M506 129.348V169.348" fill="none" stroke="black" stroke-width="20" stroke-linejoin="round"/>
+<path d="M446 738.348V573.348H518V738.348H446Z" fill="none" stroke="black" stroke-width="20"/>
+<circle cx="482" cy="607.348" r="8" fill="black"/>
+<circle cx="482" cy="607.348" r="8" fill="black"/>
+<circle cx="482" cy="629.348" r="8" fill="black"/>
+<circle cx="482" cy="652.348" r="8" fill="black"/>
+<path d="M482 677.348V700.289V707.348" fill="none" stroke="black" stroke-width="20" stroke-linecap="round"/>
+</svg>
