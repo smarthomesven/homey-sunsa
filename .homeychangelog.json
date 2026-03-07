@@ -34,5 +34,8 @@
   },
   "1.0.11": {
     "en": "Improve pairing views"
+  },
+  "1.0.12": {
+    "en": "Added repair view"
   }
 }
