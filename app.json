@@ -71,6 +71,11 @@
           "template": "add_devices"
         }
       ],
+      "repair": [
+        {
+          "id": "apikey"
+        }
+      ],
       "id": "wand"
     }
   ]

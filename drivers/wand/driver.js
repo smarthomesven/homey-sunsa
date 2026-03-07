@@ -92,6 +92,63 @@ module.exports = class MyDriver extends Homey.Driver {
     });
   }
 
+  async onRepair(session) {
+    session.setHandler('apikey', async (data) => {
+      this.log('Received API key:', data.apikey);
+      const key = data.apikey;
+      const user = data.user;
+      if (!key || !user) {
+        this.error('API key or user ID is missing');
+        return {
+          success: false,
+          error: 'API key or user ID is missing',
+        };
+      }
+      try {
+        const response = await axios.get(`https://sunsahomes.com/api/public/${user}/devices?publicApiKey=${key}`);
+        this.log('API response:', response.data);
+        if (response.status === 200) {
+          this.homey.settings.set('key', key);
+          this.homey.settings.set('user', user);
+          await session.done();
+          return {
+            success: true,
+          };
+        } else {
+          return {
+            success: false,
+            error: 'Something went wrong',
+          };
+        }
+      } catch (error) {
+        if (error.response?.status === 401) {
+          this.error('Invalid API key');
+          return {
+            success: false,
+            error: 'Invalid API key',
+          };
+        } else if (error.response?.status === 404) {
+          this.error('User not found');
+          return {
+            success: false,
+            error: 'User not found',
+          };
+        } else if (error.response?.status === 400) {
+          this.error('Bad request:', error.response.data);
+          return {
+            success: false,
+            error: 'Invalid user ID format',
+          };
+        }
+        this.error('Error validating API key:', error);
+        return {
+          success: false,
+          error: 'Something went wrong',
+        };
+      }
+    });
+  }
+
   /**
    * onPairListDevices is called when a user is adding a device
    * and the 'list_devices' view is called.
