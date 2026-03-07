@@ -31,5 +31,8 @@
   },
   "1.0.10": {
     "en": "Fix pairing view"
+  },
+  "1.0.11": {
+    "en": "Improve pairing views"
   }
 }
