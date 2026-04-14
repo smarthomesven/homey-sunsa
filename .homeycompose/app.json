@@ -1,7 +1,7 @@
 {
   "id": "com.sunsahomes",
   "version": "1.0.15",
-  "compatibility": ">=12.4.0",
+  "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
     "local"
