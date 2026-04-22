@@ -49,5 +49,8 @@
   },
   "1.0.16": {
     "en": "Increased compatibility"
+  },
+  "1.0.17": {
+    "en": "Update dependencies"
   }
 }
