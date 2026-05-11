@@ -219,12 +219,12 @@ module.exports = class MyDriver extends Homey.Driver {
         this.error('Invalid API key');
         for (const id in devices) {
           const homeyDevice = devices[id];
-          await homeyDevice.setUnavailable(Homey.__('errors.invalidkey'));
+          await homeyDevice.setUnavailable(this.homey.__('errors.invalidkey'));
         }
       } else {
         for (const id in devices) {
           const homeyDevice = devices[id];
-          await homeyDevice.setUnavailable(Homey.__('errors.unexpected'));
+          await homeyDevice.setUnavailable(this.homey.__('errors.unexpected'));
         }
       }
     }
