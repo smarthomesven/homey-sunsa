@@ -11,6 +11,7 @@
     },
     "errors": {
         "unexpected": "An error occured",
-        "key": "Invalid API Key"
+        "key": "Invalid API Key",
+        "unreachable": "Could not connect to Sunsa. Please check your internet connection."
     }
 }

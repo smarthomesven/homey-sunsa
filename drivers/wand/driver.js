@@ -224,7 +224,7 @@ module.exports = class MyDriver extends Homey.Driver {
       } else {
         for (const id in devices) {
           const homeyDevice = devices[id];
-          await homeyDevice.setUnavailable(this.homey.__('errors.unexpected'));
+          await homeyDevice.setUnavailable(this.homey.__('errors.unreachable'));
         }
       }
     }
