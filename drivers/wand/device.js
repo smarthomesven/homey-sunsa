@@ -3,13 +3,13 @@
 const Homey = require('homey');
 const axios = require('axios');
 
-module.exports = class MyDevice extends Homey.Device {
+module.exports = class WandDevice extends Homey.Device {
 
   /**
    * onInit is called when the device is initialized.
    */
   async onInit() {
-    this.log('MyDevice has been initialized');
+    this.log('Wand device has been initialized');
     this.registerCapabilityListener('windowcoverings_tilt_set', async (value) => {
       this.log('Setting tilt to', value);
       const key = this.homey.settings.get('key');

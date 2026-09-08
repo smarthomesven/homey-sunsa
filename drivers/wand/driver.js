@@ -3,13 +3,13 @@
 const Homey = require('homey');
 const axios = require('axios');
 
-module.exports = class MyDriver extends Homey.Driver {
+module.exports = class WandDriver extends Homey.Driver {
 
   /**
    * onInit is called when the driver is initialized.
    */
   async onInit() {
-    this.log('MyDriver has been initialized');
+    this.log('Wand driver has been initialized');
     this.homey.setInterval(() => this.pollSunsaDevices(), 5 * 60 * 1000);
     await this.pollSunsaDevices();
   }
