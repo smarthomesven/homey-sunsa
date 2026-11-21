@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const HomeyPush = require('./lib/push');
 
 module.exports = class SunsaApp extends Homey.App {
 
@@ -9,6 +10,13 @@ module.exports = class SunsaApp extends Homey.App {
    */
   async onInit() {
     this.log('Sunsa app has been initialized');
+    this.push = new HomeyPush(this);
+    await this.push.startPush();
+  }
+  
+  async onUninit() {
+    this.log('Sunsa app has been uninitialized');
+    this.push.stopPush();
   }
 
 };
